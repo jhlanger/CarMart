@@ -12,16 +12,16 @@ const seedAll = async () => {
   await seedUsers();
   console.log('--------------');
 
-  await seedCars();
+  await seedColor();
   console.log('--------------');
 
-  await seedProductTag();
+  await seedCars();
   console.log('--------------');
 
   await seedTags();
   console.log('--------------');
 
-  await seedColor();
+  await seedProductTag();
   console.log('--------------');
 
   process.exit(0);
