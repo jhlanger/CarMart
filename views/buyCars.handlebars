@@ -1,0 +1,12 @@
+<ol >
+  {{#each cars as |car|}}
+  <li>
+    <article >
+      <div >
+        <a href="/buy/{{cars.id}}" target="_blank">{{cars.year}} {{cars.color.color_name}} {{cars.model}} {{cars.make}} for {{cars.price}}</a>
+        <span>This {{cars.year}} {{cars.color.color_name}} {{cars.model}} {{cars.make}} has {{cars.miles}} is listed at {{cars.price}}</span>
+      </div>
+    </article>
+  </li>
+  {{/each}}
+</ol>
