@@ -1,6 +1,6 @@
-const { Product } = require('../models');
+const { Cars } = require('../models');
 
-const productData = [
+const carsData = [
   {
     model: 'Ford',
     make: 'F150',
@@ -8,7 +8,7 @@ const productData = [
     miles: 54000,
     price: 10000,
     user_id: 1,
-    tag_id: 1,
+    color_id: 1,
   },
   {
     model: 'Ford',
@@ -17,7 +17,7 @@ const productData = [
     miles: 40000,
     price: 8000,
     user_id: 1,
-    tag_id: 3,
+    color_id: 2,
   },
   {
     model: 'Ford',
@@ -26,7 +26,7 @@ const productData = [
     miles: 30000,
     price: 15000,
     user_id: 2,
-    tag_id: 2,
+    color_id: 2,
   },
   {
     model: 'Tesla',
@@ -35,7 +35,7 @@ const productData = [
     miles: 54000,
     price: 18000,
     user_id: 3,
-    tag_id: 4,
+    color_id: 3,
   },
   {
     model: 'Tesla',
@@ -44,10 +44,10 @@ const productData = [
     miles: 3000,
     price: 25000,
     user_id: 5,
-    tag_id: 4,
+    color_id: 3,
   },
 ];
 
-const seedProducts = () => Product.bulkCreate(productData);
+const seedCars = () => Cars.bulkCreate(carsData);
 
-module.exports = seedProducts;
+module.exports = seedCars;

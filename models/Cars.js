@@ -50,7 +50,7 @@ Cars.init(
         color_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'colors',
+                model: 'color',
                 key: 'id'
             }
         }
