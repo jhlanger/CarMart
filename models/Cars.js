@@ -47,10 +47,10 @@ Cars.init(
                 key: 'id'
             }
         },
-        tag_id: {
+        color_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'tag',
+                model: 'colors',
                 key: 'id'
             }
         }
