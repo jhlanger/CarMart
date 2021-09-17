@@ -33,7 +33,7 @@ Cars.init(
             allowNull: false
         },
         price: {
-            type: DataTypes.DECIMAL(10, 2),
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 isDecimal: true
