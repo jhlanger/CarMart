@@ -15,10 +15,15 @@ Cars.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'SET NULL'
 });
+Cars.belongsTo(Color, {
+  foreignKey: 'color_id'
+});
 
 Color.hasMany(Cars, {
   foreignKey: 'color_id'
 });
+
+
 
   // Cars belongToMany Tags (through ProductTag)
   Cars.belongsToMany(Tag, {
@@ -34,4 +39,4 @@ Color.hasMany(Cars, {
   });
 
 
-module.exports = { User, Cars, ProductTag, Tag };
+module.exports = { User, Cars, ProductTag, Tag , Color};

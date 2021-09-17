@@ -1,7 +1,7 @@
 const seedUsers = require('./user-seeds');
 const seedCars = require('./cars-seeds');
 const seedProductTag = require('./productTag-seeds');
-const seedTags = require('./tags-seeds');
+const seedTags = require('./tag-seeds');
 const seedColor = require('./color-seeds');
 
 const sequelize = require('../config/connection');
@@ -20,7 +20,7 @@ const seedAll = async () => {
 
   await seedTags();
   console.log('--------------');
-  
+
   await seedColor();
   console.log('--------------');
 
