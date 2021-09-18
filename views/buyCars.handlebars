@@ -1,12 +1,28 @@
+
+<h1> test</h1>
+
 <ol >
-  {{#each cars as |car|}}
+  {{#each cars}}
   <li>
     <article >
       <div >
-        <a href="/buy/{{cars.id}}" target="_blank">{{cars.year}} {{cars.color.color_name}} {{cars.model}} {{cars.make}} for {{cars.price}}</a>
-        <span>This {{cars.year}} {{cars.color.color_name}} {{cars.model}} {{cars.make}} has {{cars.miles}} is listed at {{cars.price}}</span>
+        <a href="/buy/{{id}}" target="blank">{{year}} {{color.color_name}} {{model}} {{make}} </a>
+        <span>This {{year}} {{color.color_name}} {{model}} {{make}} has {{miles}} is listed at {{price}}</span>
       </div>
     </article>
   </li>
   {{/each}}
+</ol>
+
+<ol >
+  
+  <li>
+    <article >
+      <div >
+        <a href="" target="blank">2017 Red Ford Focus </a>
+        <span>This 2017 Red Ford Focus is available for $8000.</span>
+      </div>
+    </article>
+  </li>
+
 </ol>
