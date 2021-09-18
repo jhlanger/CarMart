@@ -21,8 +21,8 @@ router.get('/', (req, res) => {
         ]
     }).then(dbCarData => {
         //const cars = dbCarData.map(car => car.get({ plain: true }));
-        //console.log(dbCarData[0]);
-        res.render('buyCars', dbCarData)
+        //console.log(dbCarData);
+        res.render('buyCars', {dbCarData})
        // res.json(dbCarData);
     }).catch(err => {
         console.log(err);
@@ -32,8 +32,11 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     console.log('======================');
+    
     Cars.findOne({
+        
         where: {
+            
             id:req.params.id
         },
         include: [
@@ -51,15 +54,18 @@ router.get('/:id', (req, res) => {
             }
         ]
     }).then(dbCarData => {
-        //const cars = dbCarData.map(car => car.get({ plain: true }));
-        //console.log(dbCarData[0]);
-        res.render('buyCars', dbCarData)
-       // res.json(dbCarData);
+        //console.log(dbCarData);
+        console.log(dbCarData.dataValues.tags[0].dataValues.tag_name)
+        //console.log(dbCarData.dataValues.tags.tag[0].dataValues.tag_name)
+        res.render('single-car', dbCarData.dataValues)
+       
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
 });
+
+
 
 // test api data
 router.get('/api', (req, res) => {
@@ -120,5 +126,7 @@ router.get('/api/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+
 
 module.exports = router;

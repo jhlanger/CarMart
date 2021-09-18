@@ -1,0 +1,19 @@
+<ol >
+ 
+  <li>
+    <article >
+      <div >
+        <a href="/buy/{{id}}" target="blank">{{year}} {{color.dataValues.color_name}} {{model}} {{make}} </a>
+        <span>This {{year}} {{color.dataValues.color_name}} {{model}} {{make}} has {{miles}} miles is listed at ${{price}}</span>
+        <span>Sold by: {{user.dataValues.username}}</span>
+        <span>contact: {{user.dataValues.email}}</span>
+        <ul>
+            {{#each tags}}
+            <li>{{dataValues.tag_name}}</li>
+            {{/each}}
+        </ul>
+      </div>
+    </article>
+  </li>
+ 
+</ol>
