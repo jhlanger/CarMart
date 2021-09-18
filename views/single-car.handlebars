@@ -3,14 +3,13 @@
   <li>
     <article >
       <div >
-        <a href="/buy/{{id}}" target="blank">{{year}} {{color.dataValues.color_name}} {{model}} {{make}} </a>
-        <span>This {{year}} {{color.dataValues.color_name}} {{model}} {{make}} has {{miles}} miles is listed at ${{price}}</span>
-        <span>Sold by: {{user.dataValues.username}}</span>
-        <span>contact: {{user.dataValues.email}}</span>
-        <ul>
-            {{#each tags}}
-            <li>{{dataValues.tag_name}}</li>
-            {{/each}}
+        <a href="/buy/{{id}}" target="blank">{{year}} {{color}} {{model}} {{make}} </a>
+        <p>This {{year}} {{color}} {{model}} {{make}} has {{miles}} miles is listed at ${{price}}</p>
+        <p>Features: {{tags}}</p>
+
+        <p>Sold by: {{user.dataValues.username}}</p>
+        <p>contact: {{user.dataValues.email}}</p>
+       
         </ul>
       </div>
     </article>
