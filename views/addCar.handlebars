@@ -1,0 +1,49 @@
+<section id="add" >
+    <div >
+      <h1>Sell A Car</h1>
+      {{#each errors}}
+        <div >
+          <p>{{text}}</p>
+        </div>
+      {{/each}}
+      <form action="/buy/add" method="POST">
+        <div >
+          <label for="make">Car Make</label>
+          <input type="text" name="make" id="make" class="input-box" placeholder="eg. Ford, Toyota, Tesla"
+            maxlength="100" value={{make}}>
+        </div>
+         <div >
+          <label for="model">Car Model</label>
+          <input type="text" name="model" id="model" class="input-box" placeholder="eg. Focus, Fusion, Camry"
+            maxlength="100" value={{model}}>
+        </div>
+         <div >
+          <label for="year">Car Year</label>
+          <input type="text" name="year" id="year" class="input-box" placeholder="eg. 2021"
+            maxlength="100" value={{year}}>
+        </div>
+         <div >
+          <label for="miles">Car Miles</label>
+          <input type="text" name="miles" id="miles" class="input-box" placeholder="eg. 65000"
+            maxlength="100" value={{miles}}>
+        </div>
+         <div >
+          <label for="price">Listing Price: $</label>
+          <input type="text" name="price" id="price" class="input-box" placeholder="eg. 10000"
+            maxlength="100" value={{price}}>
+        </div>
+         <div >
+          <label for="color">Car Color</label>
+          <input type="text" name="color" id="color" class="input-box" placeholder="eg. Red, Blue"
+            maxlength="100" value={{color}}>
+        </div>
+        <div class="input-group">
+          <label for="tags">Car Features</label>
+          <input type="text" name="tags" id="tags" class="input-box" placeholder="eg. Heated Seats, Backup Camera, Bluetooth"
+          maxlength="100" value={{technologies}}>
+        </div>
+        
+        <input type="submit" value="Sell Car">
+      </form>
+    </div>
+  </section>

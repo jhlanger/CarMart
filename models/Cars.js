@@ -47,12 +47,14 @@ Cars.init(
                 key: 'id'
             }
         },
-        color_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'color',
-                key: 'id'
-            }
+        color: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        tags: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: 'None'
         }
     },
     {
