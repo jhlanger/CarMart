@@ -1,4 +1,4 @@
-<section id="add" >
+<section id="add" class= "container">
     <div >
       <h1>Sell A Car</h1>
       {{#each errors}}
@@ -6,41 +6,46 @@
           <p>{{text}}</p>
         </div>
       {{/each}}
-      <form action="/buy/add" method="POST">
+      <form action="/add" method="POST">
         <div >
           <label for="make">Car Make</label>
-          <input type="text" name="make" id="make" class="input-box" placeholder="eg. Ford, Toyota, Tesla"
+          <input type="text" name="make" id="make" class="input-box" placeholder="Ford, Toyota, Tesla"
             maxlength="100" value={{make}}>
         </div>
          <div >
           <label for="model">Car Model</label>
-          <input type="text" name="model" id="model" class="input-box" placeholder="eg. Focus, Fusion, Camry"
+          <input type="text" name="model" id="model" class="input-box" placeholder="Focus, Fusion, Camry"
             maxlength="100" value={{model}}>
         </div>
          <div >
           <label for="year">Car Year</label>
-          <input type="text" name="year" id="year" class="input-box" placeholder="eg. 2021"
+          <input type="text" name="year" id="year" class="input-box" placeholder="2021"
             maxlength="100" value={{year}}>
         </div>
          <div >
           <label for="miles">Car Miles</label>
-          <input type="text" name="miles" id="miles" class="input-box" placeholder="eg. 65000"
+          <input type="text" name="miles" id="miles" class="input-box" placeholder="65000"
             maxlength="100" value={{miles}}>
         </div>
          <div >
           <label for="price">Listing Price: $</label>
-          <input type="text" name="price" id="price" class="input-box" placeholder="eg. 10000"
+          <input type="text" name="price" id="price" class="input-box" placeholder="10000"
             maxlength="100" value={{price}}>
         </div>
          <div >
           <label for="color">Car Color</label>
-          <input type="text" name="color" id="color" class="input-box" placeholder="eg. Red, Blue"
+          <input type="text" name="color" id="color" class="input-box" placeholder="Red, Blue"
             maxlength="100" value={{color}}>
         </div>
         <div class="input-group">
           <label for="tags">Car Features</label>
-          <input type="text" name="tags" id="tags" class="input-box" placeholder="eg. Heated Seats, Backup Camera, Bluetooth"
-          maxlength="100" value={{technologies}}>
+          <input type="text" name="tags" id="tags" class="input-box" placeholder="Heated Seats, Backup Camera, Bluetooth"
+          maxlength="100" value={{tags}}>
+        </div>
+         <div class="input-group">
+          <label for="description">Car Description</label>
+          <textarea name="description" id="description" class="input-box" placeholder="Describe the details of the car"
+            rows="10">{{description}}</textarea>
         </div>
         
         <input type="submit" value="Sell Car">

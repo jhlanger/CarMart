@@ -16,11 +16,11 @@ Cars.init(
             primaryKey: true,
             autoIncrement: true
         },
-        model: {
+        make: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        make: {
+        model: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -55,6 +55,16 @@ Cars.init(
             type: DataTypes.STRING,
             allowNull: false,
             defaultValue: 'None'
+        },
+        sold: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
+        },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: 'No description Listed'
         }
     },
     {
