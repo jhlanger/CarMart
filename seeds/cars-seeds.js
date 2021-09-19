@@ -11,6 +11,7 @@ const carsData = [
     color: 'Blue',
     tags: 'Heated Seats, Backup Camera, Bluetooth',
     sold: 0,
+    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo repellendus commodi placeat obcaecati. Non, fugiat? Reiciendis earum quibusdam accusamus excepturi laudantium maxime officia.",
   },
   {
     make: 'Ford',
@@ -22,6 +23,7 @@ const carsData = [
     color: 'Red',
     tags: 'Heated Seats, Blindspot Monitoring, Remote Start',
     sold: 0,
+    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo repellendus commodi placeat obcaecati. Non, fugiat? Reiciendis earum quibusdam accusamus excepturi laudantium maxime officia.",
   },
   {
     make: 'Ford',
@@ -33,6 +35,7 @@ const carsData = [
     color: 'Red',
     tags: 'Navigation System, Sun Roof, Bluetooth',
     sold: 0,
+    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo repellendus commodi placeat obcaecati. Non, fugiat? Reiciendis earum quibusdam accusamus excepturi laudantium maxime officia.",
   },
   {
     make: 'Tesla',
@@ -44,6 +47,8 @@ const carsData = [
     color: 'White',
     tags: 'Remote Start, Backup Camera, Blindsport Monitoring',
     sold: 0,
+    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo repellendus commodi placeat obcaecati. Non, fugiat? Reiciendis earum quibusdam accusamus excepturi laudantium maxime officia.",
+
   },
   {
     make: 'Tesla',
@@ -55,6 +60,7 @@ const carsData = [
     color: 'White',
     tags: 'Leather Seats, Navigation System',
     sold: 0,
+    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo repellendus commodi placeat obcaecati. Non, fugiat? Reiciendis earum quibusdam accusamus excepturi laudantium maxime officia.",
   },
 ];
 

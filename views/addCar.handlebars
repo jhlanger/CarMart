@@ -40,7 +40,12 @@
         <div class="input-group">
           <label for="tags">Car Features</label>
           <input type="text" name="tags" id="tags" class="input-box" placeholder="Heated Seats, Backup Camera, Bluetooth"
-          maxlength="100" value={{technologies}}>
+          maxlength="100" value={{tags}}>
+        </div>
+         <div class="input-group">
+          <label for="description">Car Description</label>
+          <textarea name="description" id="description" class="input-box" placeholder="Describe the details of the car"
+            rows="10">{{description}}</textarea>
         </div>
         
         <input type="submit" value="Sell Car">

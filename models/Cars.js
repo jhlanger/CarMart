@@ -60,6 +60,11 @@ Cars.init(
             type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
+        },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: 'No description Listed'
         }
     },
     {

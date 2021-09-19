@@ -9,7 +9,7 @@ router.get('/', (req, res) => res.render('addCar'));
 
 // Add a car
 router.post('/', (req, res) => {
-  let { make, model, year, miles, price, color, tags } = req.body;
+  let { make, model, year, miles, price, color, tags, description } = req.body;
   let errors = [];
   let user_id=1;
 
@@ -44,7 +44,8 @@ router.post('/', (req, res) => {
       miles, 
       price, 
       color,
-      tags
+      tags,
+      description
     });
   }else{
 
@@ -60,7 +61,8 @@ router.post('/', (req, res) => {
         price,
         user_id, 
         color,
-        tags
+        tags,
+        description
     })
       .then(addCarData => res.redirect('/buy'))
       .catch(err => res.render('error', {error:err.message}))

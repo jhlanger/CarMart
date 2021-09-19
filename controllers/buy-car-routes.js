@@ -29,6 +29,8 @@ router.get('/', (req, res) => {
     });
 });
 
+// no longer need a .get(/:id) so disabled it
+/*
 router.get('/:id', (req, res) => {
     console.log('======================');
     
@@ -56,6 +58,7 @@ router.get('/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+*/
 
 router.get('/filter', (req, res) => {
     console.log('======================');
