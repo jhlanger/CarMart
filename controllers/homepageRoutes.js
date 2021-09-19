@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Cars, User } = require('../models');
 
 
-router.get('/', (req, res) => res.render('index'));
+router.get('/', (req, res) => res.render('homepage'));
 
 router.get('/login', (req, res) => res.render('login'));
 router.get('/register', (req, res) => res.render('register'));

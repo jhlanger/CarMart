@@ -7,9 +7,9 @@ const { Cars, User } = require('../models');
 router.get('/', (req, res) => res.render('addCar'));
 
 
-// Add a gig
+// Add a car
 router.post('/', (req, res) => {
-  let { model, make, year, miles, price, color, tags } = req.body;
+  let { make, model, year, miles, price, color, tags } = req.body;
   let errors = [];
   let user_id=1;
 
@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
       color,
       tags
     });
-  } 
+  }else{
 
     // Make lowercase and remove space after comma
     tags = tags.toLowerCase().replace(/,[ ]+/g, ',');
@@ -64,7 +64,7 @@ router.post('/', (req, res) => {
     })
       .then(addCarData => res.redirect('/buy'))
       .catch(err => res.render('error', {error:err.message}))
-  
+  }
 });
 
 module.exports = router;

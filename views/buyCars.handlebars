@@ -1,12 +1,34 @@
-<ol >
-  {{#each dbCarData}}
-  <li>
-    <article >
-      <div >
-        <a href="/buy/{{dataValues.id}}" target="blank">{{dataValues.year}} {{dataValues.color}} {{dataValues.model}} {{dataValues.make}} </a>
-        <span>This {{dataValues.year}} {{dataValues.color}} {{dataValues.model}} {{dataValues.make}} has {{dataValues.miles}} miles is listed at ${{dataValues.price}}</span>
+
+  <div class="container mt-12">
+    <div class ="row">
+
+      {{#each dbCarData}}
+
+       <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+        <div class="card">
+          <img class="card-img" src="/images/{{dataValues.make}}.PNG" alt="Make Logo">
+          <div class="card-body">
+            <h4 class="card-title"><a href="/buy/{{dataValues.id}}">{{dataValues.year}} {{dataValues.make}} {{dataValues.model}}</a></h4>
+            <h6 class="card-subtitle mb-2 text-muted">{{dataValues.tags}}</h6>
+            <p class="card-text">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo repellendus commodi placeat obcaecati. Non, fugiat? Reiciendis earum quibusdam accusamus excepturi laudantium maxime officia.             </p>
+            <div class="options d-flex flex-fill">
+               <div class="form-control mr-1">{{dataValues.color}}</div>
+               <div class="form-control mr-1">{{dataValues.miles}} miles</div>
+              
+            </div>
+            <div class="buy d-flex justify-content-between align-items-center">
+              <div class="price text-success"><h5 class="mt-4">${{dataValues.price}}</h5></div>
+               
+               <a href="mailto:someone@yoursite.com" class="btn btn-danger mt-3">Contact Seller</a> 
+            </div>
+          </div>
+        </div>
       </div>
-    </article>
-  </li>
-  {{/each}}
-</ol>
+
+      {{/each}}
+      
+
+
+    </div>
+  </div>
