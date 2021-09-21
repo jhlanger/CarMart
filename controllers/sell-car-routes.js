@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
   }else{
 
     // Make lowercase and remove space after comma
-    tags = tags.toLowerCase().replace(/,[ ]+/g, ',');
+    //tags = tags.toLowerCase().replace(/,[ ]+/g, ',');
 
     // Insert into table
     Cars.create({
