@@ -73,7 +73,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.post('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     console.log('======================');
 
     Cars.update({
@@ -106,12 +106,12 @@ router.post('/:id', (req, res) => {
 });
 
 
-router.post('/:id', (req, res) => {
+router.put('/sold/:id', (req, res) => {
     console.log('======================');
-    varSold = 1;
+    
     Cars.update({
-        
-        sold: varSold
+        sold: req.body.sold
+       
     },
         {
             where: {

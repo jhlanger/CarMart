@@ -1,20 +1,27 @@
 
+ const id = window.location.toString().split('/')[
+  window.location.toString().split('/').length - 1
+];
 
 
 var deleteBtn = document.getElementById('deleteBtn');
-async function deleteCarTest(event) {
-    event.preventDefault();
 
+
+async function deleteCar(event) {
+  
+    event.preventDefault();
+    console.log('delete is running')
     const response = await fetch(`/api/cars/${id}`, {
       method: 'DELETE'
     });
   
     if (response.ok) {
-      document.location.replace('/buyCars/');
+      document.location.replace('/mycars/');
     } else {
       alert(response.statusText);
     }
   }
   
 
-deleteBtn.addEventListener("click", deleteCarTest);
+deleteBtn.addEventListener("click", deleteCar);
+

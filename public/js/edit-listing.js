@@ -1,19 +1,24 @@
-
-
-
 var updateBtn = document.getElementById('updateBtn');
-var make = document.getElementById('make');
-var model = document.getElementById('model');
-var year = document.getElementById('year');
-var miles = document.getElementById('miles');
-var price = document.getElementById('price');
-var color = document.getElementById('color');
-var tags = document.getElementById('tags');
-var description = document.getElementById('description');
+
+
+
 
 async function editListing(event) {
     event.preventDefault();
+   
+    console.log('update is running')
+  
+    var make = document.getElementById('make').value.trim();
+    var model = document.getElementById('model').value.trim();
+    var year = document.getElementById('year').value.trim();
+    var miles = document.getElementById('miles').value.trim();
+    var price = document.getElementById('price').value.trim();
+    var color = document.getElementById('color').value.trim();
+    var tags = document.getElementById('tags').value.trim();
+    var description = document.getElementById('description').value.trim();
 
+   
+    
     const response = await fetch(`/api/cars/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
@@ -25,11 +30,17 @@ async function editListing(event) {
         color,
         tags,
         description
-      })
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+     
     });
   
     if (response.ok) {
-      document.location.replace('/myCars/');
+      document.location.replace('/mycars/');
+
+     // console.log(description);
     } else {
       alert(response.statusText);
     }
