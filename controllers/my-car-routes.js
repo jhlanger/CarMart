@@ -54,5 +54,64 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.put('/:id', (req, res) => {
+    let { make, model, year, miles, price, color, tags, description } = req.body;
+    let errors = [];
+    let user_id=1;
+  
+    // Validate Fields
+    if(!model) {
+      errors.push({ text: 'Please add your vehicle model' });
+    }
+    if(!make) {
+      errors.push({ text: 'Please add your vehicle make' });
+    }
+    if(!year) {
+      errors.push({ text: 'Please add your vehicle year' });
+    }
+    if(!miles) {
+      errors.push({ text: 'Please add your vehicles number of miles' });
+    }
+    if(!price) {
+      errors.push({ text: 'Please add a price for your vehicle' });
+    }
+    if(!color) {
+      errors.push({ text: 'Please add your vehicle color' });
+    }
+  
+  
+    // Check for errors
+    if(errors.length > 0) {
+      res.render('single-car', {
+        errors,
+        make, 
+        model,
+        year, 
+        miles, 
+        price, 
+        color,
+        tags,
+        description
+      });
+    }else{
+  
+  
+      // update table
+      Cars.update({
+          make, 
+          model,
+          year, 
+          miles, 
+          price,
+          user_id, 
+          color,
+          tags,
+          description
+      })
+        .then(addCarData => res.redirect('/'))
+        .catch(err => res.render('error', {error:err.message}))
+    }
+  });
+
 
 module.exports = router;
