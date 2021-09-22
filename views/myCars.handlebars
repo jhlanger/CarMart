@@ -8,7 +8,7 @@
         <div class="card">
           <img class="card-img" src="/images/{{dataValues.make}}.PNG" alt="Make Logo">
           <div class="card-body">
-            <h4 class="card-title"><a href = "/mycars/{{dataValues.id}}">{{dataValues.year}} {{dataValues.make}} {{dataValues.model}}</a></h4>
+            <h4 class="card-title">{{dataValues.year}} {{dataValues.make}} {{dataValues.model}}</h4>
             <h6 class="card-subtitle mb-2 text-muted">{{dataValues.tags}}</h6>
             <p class="card-text">
               {{dataValues.description}}</p>
@@ -20,7 +20,7 @@
             <div class="buy d-flex justify-content-between align-items-center">
               <div class="price text-success"><h5 class="mt-4">${{dataValues.price}}</h5></div>
                
-               <a href="mailto:{{dataValues.user.dataValues.email}}?subject=Your%20Carvana2.0%20Listing&body=Hello {{dataValues.user.dataValues.username}}," class="btn btn-danger mt-3">Contact Seller</a> 
+               <a href = "/mycars/{{dataValues.id}}" class="btn btn-danger mt-3">Update Listing</a> 
             </div>
           </div>
         </div>

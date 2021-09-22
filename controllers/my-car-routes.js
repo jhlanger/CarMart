@@ -43,9 +43,7 @@ router.get('/:id', (req, res) => {
         
         
     }).then(dbCarData => {
-        //console.log(dbCarData);
-        //console.log(dbCarData.dataValues.tags[0].dataValues.tag_name)
-        //console.log(dbCarData.dataValues.tags.tag[0].dataValues.tag_name)
+        
         res.render('single-car', dbCarData.dataValues);
        
     }).catch(err => {
@@ -53,6 +51,7 @@ router.get('/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
 
 
 module.exports = router;
