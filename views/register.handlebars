@@ -1,18 +1,24 @@
 <h1>Register</h1>
 
-<form action = "/register" method = "POST">
+<form class = "registerForm" action = "/register" method = "POST">
     <div>
-        <label for = "name">Name</label>
-        <input type = "text" name = "name" id = "name">
+        <label for = "name">name</label>
+        <input type = "text" name = "name" id = "nameSignup">
+    </div>
+    <div>
+        <label for = "name">Username</label>
+        <input type = "text" name = "username" id = "usernameSignup">
     </div>
     <div>
         <label for = "email">Email</label>
-        <input type = "text" name = "email" id = "email">
+        <input type = "text" name = "email" id = "emailSignup">
     </div>
     <div>
         <label for = "password">Password</label>
-        <input type = "password" name = "password" id = "password">
+        <input type = "password" name = "password" id = "passwordSignup">
     </div>
     <button type = "submit">Register!</button>
 </form>
 <a href = "/login">Login</a>
+
+<script src="/javascript/register.js"></script>
