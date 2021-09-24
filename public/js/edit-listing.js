@@ -14,7 +14,7 @@ async function editListing(event) {
     var miles = document.getElementById('miles').value.trim();
     var price = document.getElementById('price').value.trim();
     var color = document.getElementById('color').value.trim();
-    var tags = document.getElementById('tags').value.trim();
+    //var tags = document.getElementById('tags').value.trim();
     var description = document.getElementById('description').value.trim();
 
    
@@ -28,7 +28,6 @@ async function editListing(event) {
         miles,
         price,
         color,
-        tags,
         description
       }),
       headers: {
