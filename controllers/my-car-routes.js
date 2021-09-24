@@ -10,14 +10,14 @@ router.get('/', (req, res) => {
                 model: User,
                 attributes: ['id', 'username', 'email']
             }
-            
+
         ],
-        where: {sold: 0, user_id: '1'},
+        where: { sold: 0, user_id: '1' },
         order: [['id', 'DESC']]
     }).then(dbCarData => {
-       
-        res.render('myCars', {dbCarData})
-       
+
+        res.render('myCars', { dbCarData })
+
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -26,26 +26,26 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     console.log('======================');
-    
+
     Cars.findOne({
-        
+
         where: {
-            
-            id:req.params.id
+
+            id: req.params.id
         },
         include: [
             {
                 model: User,
                 attributes: ['id', 'username', 'email']
             }
-        
+
         ]
-        
-        
+
+
     }).then(dbCarData => {
-        
+        console.log(dbCarData.dataValues.tags);
         res.render('single-car', dbCarData.dataValues);
-       
+
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
