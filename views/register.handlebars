@@ -1,24 +1,28 @@
+<div class = "container">
+
 <h1>Register</h1>
 
 <form class = "registerForm" action = "/register" method = "POST">
     <div>
         <label for = "name">name</label>
-        <input type = "text" name = "name" id = "nameSignup">
+        <input class="form-control" type = "text" name = "name" id = "nameSignup">
     </div>
     <div>
         <label for = "name">Username</label>
-        <input type = "text" name = "username" id = "usernameSignup">
+        <input class="form-control" type = "text" name = "username" id = "usernameSignup">
     </div>
     <div>
         <label for = "email">Email</label>
-        <input type = "text" name = "email" id = "emailSignup">
+        <input class="form-control" type = "text" name = "email" id = "emailSignup">
     </div>
-    <div>
+    <div class = "mb-2">
         <label for = "password">Password</label>
-        <input type = "password" name = "password" id = "passwordSignup">
+        <input class="form-control" type = "password" name = "password" id = "passwordSignup">
     </div>
     <button type = "submit">Register!</button>
 </form>
 <a href = "/login">Login</a>
+
+</div>
 
 <script src="/javascript/register.js"></script>
