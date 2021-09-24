@@ -1,0 +1,18 @@
+    .bg { 
+    background-image: url("../images/homepagecar.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    .bg-2 { 
+        background-image: url("../images/background2.jfif");
+        height: 100%; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .custom {
+        width: 8rem !important;
+    }
