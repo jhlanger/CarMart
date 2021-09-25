@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Cars, User } = require('../models');
+const auth = require('../util/auth.js')
 
-router.get('/', (req, res) => {
+router.get('/',auth,  (req, res) => {
     console.log('======================');
     Cars.findAll({
         include: [
@@ -12,7 +13,7 @@ router.get('/', (req, res) => {
             }
 
         ],
-        where: { sold: 0, user_id: '1' },
+        where: { sold: 0, user_id: req.session.user_id },
         order: [['id', 'DESC']]
     }).then(dbCarData => {
 
@@ -43,7 +44,7 @@ router.get('/:id', (req, res) => {
 
 
     }).then(dbCarData => {
-        console.log(dbCarData.dataValues.tags);
+        //console.log(dbCarData.dataValues.tags);
         res.render('single-car', dbCarData.dataValues);
 
     }).catch(err => {

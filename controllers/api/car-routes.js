@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { User, Cars } = require('../../models');
+const auth = require('../../util/auth');
 
-router.get('/', (req, res) => {
+router.get('/', auth, (req, res) => {
     console.log('======================');
     Cars.findAll({
         include: [
@@ -48,7 +49,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', auth, (req, res) => {
     console.log('======================');
 
     Cars.create({
@@ -58,7 +59,7 @@ router.post('/', (req, res) => {
         year: req.body.year,
         miles: req.body.miles,
         price: req.body.price,
-        user_id: req.body.user_id,
+        user_id: req.session.user_id,
         color: req.body.color,
         tags: req.body.tags,
         description: req.body.description
@@ -73,7 +74,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', auth, (req, res) => {
     console.log('======================');
 
     Cars.update({
@@ -83,7 +84,7 @@ router.put('/:id', (req, res) => {
         year: req.body.year,
         miles: req.body.miles,
         price: req.body.price,
-        user_id: req.body.user_id,
+        user_id: req.session.user_id,
         color: req.body.color,
         tags: req.body.tags,
         description: req.body.description
