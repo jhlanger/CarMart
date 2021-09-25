@@ -1,12 +1,10 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { Cars, User } = require('../models');
 const auth = require('../util/auth');
 
 
 router.get('/', auth, (req, res) => {
-    
-    res.render('homepage')
+    const loggedIn = req.session.loggedIn
+    res.render('homepage',{loggedIn});
     console.log(req.session);
 });
 
