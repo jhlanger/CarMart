@@ -2,16 +2,18 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Cars, User } = require('../models');
+const auth = require('../util/auth.js')
+
 
 
 router.get('/', (req, res) => res.render('addCar'));
 
 
 // Add a car
-router.post('/', (req, res) => {
+router.post('/', auth, (req, res) => {
   let { make, model, year, miles, price, color, tags, description } = req.body;
   let errors = [];
-  let user_id=1;
+  let user_id=req.session.user_id;
 
   // Validate Fields
   if(!model) {
