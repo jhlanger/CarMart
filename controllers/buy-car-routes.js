@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Cars, User } = require('../models');
-const auth = require('../util/auth');
+const auth2 = require('../util/auth2');
 
 
-router.get('/', auth, (req, res) => {
+router.get('/', auth2, (req, res) => {
+    const loggedIn = req.session.loggedIn;
     console.log(req.session);
     console.log('======================');
     Cars.findAll({
@@ -18,11 +19,8 @@ router.get('/', auth, (req, res) => {
         where: {sold: 0},
         order: [['id', 'DESC']]
     }).then(dbCarData => {
-        //const cars = dbCarData.map(car => car.get({ plain: true }));
-        //console.log(dbCarData[0].dataValues.make);
-        //const makeLower = dbCarData.dataValues.make
-        res.render('buyCars', {dbCarData})
-       // res.json(dbCarData);
+        res.render('buyCars', {dbCarData,loggedIn})
+      
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);

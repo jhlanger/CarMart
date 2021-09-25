@@ -8,8 +8,8 @@ const auth = require('../util/auth.js')
 
 
 router.get('/', auth, (req, res) => {
-  
-  res.render('addCar');
+  const loggedIn = req.session.loggedIn
+  res.render('addCar',{loggedIn});
   
 });
 

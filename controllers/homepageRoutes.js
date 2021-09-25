@@ -5,7 +5,7 @@ const auth2 = require('../util/auth2');
 
 router.get('/', auth2, (req, res) => {
     const loggedIn = req.session.loggedIn
-    res.render('homepage',{loggedIn});
+    res.render('homepage', { loggedIn });
     //console.log(req.session);
 });
 
@@ -27,6 +27,13 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
-router.get('/about', (req, res) => res.render('about'));
+router.get('/about', (req, res) => {
+    const loggedIn = req.session.loggedIn
+    res.render('about', {loggedIn})
+
+});
+
+
+
 
 module.exports = router;

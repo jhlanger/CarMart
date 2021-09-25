@@ -5,6 +5,7 @@ const auth = require('../util/auth.js')
 
 router.get('/',auth,  (req, res) => {
     console.log('======================');
+    const loggedIn = req.session.loggedIn
     Cars.findAll({
         include: [
             {
@@ -17,7 +18,7 @@ router.get('/',auth,  (req, res) => {
         order: [['id', 'DESC']]
     }).then(dbCarData => {
 
-        res.render('myCars', { dbCarData })
+        res.render('myCars', { dbCarData, loggedIn})
 
     }).catch(err => {
         console.log(err);
