@@ -5,7 +5,13 @@ const auth = require('../util/auth.js')
 
 
 
-router.get('/', (req, res) => res.render('addCar'));
+
+
+router.get('/', auth, (req, res) => {
+  
+  res.render('addCar');
+  
+});
 
 
 // Add a car
