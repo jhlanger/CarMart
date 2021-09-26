@@ -26,9 +26,9 @@ router.get('/',auth,  (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', auth, (req, res) => {
     console.log('======================');
-
+    const loggedIn = req.session.loggedIn;
     Cars.findOne({
 
         where: {
@@ -45,8 +45,8 @@ router.get('/:id', (req, res) => {
 
 
     }).then(dbCarData => {
-        //console.log(dbCarData.dataValues.tags);
-        res.render('single-car', dbCarData.dataValues);
+       // console.log(dbCarData);
+        res.render('single-car', {dbCarData, loggedIn});
 
     }).catch(err => {
         console.log(err);
