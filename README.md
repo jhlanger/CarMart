@@ -7,7 +7,9 @@
 *JavaScript
 *Express
 *Node
-*
+*Heroku
+*Bcrypt
+*Dotenv
 
 ## Image
 ![carmart](./public/images/carmartimage.PNG?raw=true "carmart")
